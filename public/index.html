@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript">
+window.onload=function()
+{
+    var username = document.getElementById('username').value;
+    var button = document.getElementById('submit');
+    button.onclick = function()
+    {
+        setCookie('username',username,1);
+        window.location.href="index2.html";
+    }
+}
+
+function setCookie(c_name,value,expiredays)
+{
+    var exdate=new Date();
+    exdate.setDate(exdate.getDate()+expiredays);
+    document.cookie=c_name+ "=" +escape(value)+
+    ((expiredays==null) ? "" : ";expires="+exdate.toUTCString());
+}
+</script>
+</head>
+<body>
+<input type="text" name="email">
+<input type="text" name="username">
+<a href="index2.html" id="submit">chat</a>
+
+</body>
+</html>
